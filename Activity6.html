@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style6.css">
+    <style>
+        /* Add CSS for centering the image and transition */
+        .centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: transform 0.5s ease-in-out;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Close Me If You Can</h1>
+    <button id="a">Close</button>
+    <img id="image1" style="display: none;" src="./image/download (3).jpeg">
+    <img id="image2" style="display: none;" src="./9d260-About2BMe2BPt2BI2BFacebook.png" alt="">
+    <script>
+        $(document).ready(function () {
+            $("#a").click(function () {
+                // Apply the centered CSS style to the images
+                $("#image1, #image2").addClass("centered");
+
+                // Show the hidden images
+                $("#image1, #image2").show();
+
+                // Show an alert message after the images have been centered
+                setTimeout(function() {
+                    alert("You can't close me 😒😊");
+                    
+                    // Remove the centered CSS style after the message is displayed
+                    $("#image1, #image2").removeClass("centered");
+
+                    // Hide the images
+                    setTimeout(function() {
+                        $("#image1, #image2").hide();
+                    },200); // Hide the images after 500ms
+                },200); // Display the alert after 500ms
+            });
+        });
+    </script>
+</body>
+</html>
